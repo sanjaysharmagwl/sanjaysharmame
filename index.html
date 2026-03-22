@@ -14,16 +14,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #0a0a0f;
-      --bg-card:    #111118;
-      --bg-card-h:  #161622;
-      --border:     rgba(255,255,255,0.07);
-      --border-h:   rgba(124,58,237,0.45);
-      --text:       #e2e2f0;
-      --text-muted: #7878a0;
-      --accent-1:   #7c3aed;
-      --accent-2:   #2563eb;
-      --gradient:   linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+      --bg:         #030d1a;
+      --bg-card:    #071428;
+      --bg-card-h:  #0c1e38;
+      --border:     rgba(255,255,255,0.08);
+      --border-h:   rgba(34,211,238,0.45);
+      --text:       #f0f6ff;
+      --text-muted: #8fafc8;
+      --accent-1:   #22d3ee;
+      --accent-2:   #38bdf8;
+      --gradient:   linear-gradient(135deg, #22d3ee 0%, #38bdf8 55%, #818cf8 100%);
       --radius:     12px;
       --nav-h:      64px;
       --max-w:      880px;
@@ -45,7 +45,7 @@
     /* ─── Scrollbar ─────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: #0e2a45; border-radius: 3px; }
 
     /* ─── Nav ───────────────────────────────────────────────────── */
     nav {
@@ -62,7 +62,7 @@
     }
 
     nav.scrolled {
-      background: rgba(10,10,15,0.8);
+      background: rgba(3,13,26,0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-color: var(--border);
@@ -152,7 +152,7 @@
       left: -10%;
       width: 60%;
       height: 70%;
-      background: radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(34,211,238,0.10) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -163,7 +163,7 @@
       right: -5%;
       width: 50%;
       height: 60%;
-      background: radial-gradient(ellipse, rgba(37,99,235,0.09) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(56,189,248,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -193,27 +193,27 @@
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 3px solid rgba(124,58,237,0.35);
-      box-shadow: 0 0 0 6px rgba(124,58,237,0.08), 0 24px 64px rgba(0,0,0,0.5);
+      border: 3px solid rgba(34,211,238,0.45);
+      box-shadow: 0 0 0 6px rgba(34,211,238,0.08), 0 24px 64px rgba(0,0,0,0.6);
     }
 
     .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(124,58,237,0.12);
-      border: 1px solid rgba(124,58,237,0.25);
+      background: rgba(34,211,238,0.10);
+      border: 1px solid rgba(34,211,238,0.30);
       border-radius: 999px;
       padding: 0.3rem 0.9rem;
       font-size: 0.8rem;
       font-weight: 500;
-      color: #a78bfa;
+      color: #22d3ee;
       margin-bottom: 1.5rem;
     }
 
     .hero-tag .dot {
       width: 6px; height: 6px;
-      background: #a78bfa;
+      background: #22d3ee;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
@@ -229,7 +229,7 @@
       line-height: 1.05;
       letter-spacing: -0.03em;
       margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #93c5fd 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #7ee8fa 45%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -273,8 +273,8 @@
     }
 
     .social-link:hover {
-      border-color: rgba(124,58,237,0.4);
-      background: rgba(124,58,237,0.08);
+      border-color: rgba(34,211,238,0.45);
+      background: rgba(34,211,238,0.08);
       color: var(--text);
       transform: translateY(-1px);
     }
@@ -307,14 +307,14 @@
       transition: border-color 0.2s;
     }
 
-    .skill-group:hover { border-color: rgba(124,58,237,0.3); }
+    .skill-group:hover { border-color: rgba(34,211,238,0.35); }
 
     .skill-group-title {
       font-size: 0.72rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #a78bfa;
+      color: #22d3ee;
       margin-bottom: 0.5rem;
     }
 
@@ -361,7 +361,7 @@
 
     .timeline-item:hover::before {
       background: var(--accent-1);
-      box-shadow: 0 0 12px rgba(124,58,237,0.5);
+      box-shadow: 0 0 12px rgba(34,211,238,0.5);
     }
 
     .timeline-header {
@@ -391,24 +391,52 @@
 
     .timeline-company {
       font-size: 0.875rem;
-      color: #a78bfa;
+      color: #38bdf8;
       font-weight: 500;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
+    }
+
+    .company-logo-wrap {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
     .company-logo {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #fff;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
-      padding: 1px;
-      vertical-align: middle;
     }
+
+    .company-logo-fallback {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgba(34,211,238,0.25);
+      background: rgba(34,211,238,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #22d3ee;
+      flex-shrink: 0;
+    }
+
+    .company-info { display: flex; flex-direction: column; gap: 0.1rem; }
+    .company-name { font-size: 0.9rem; font-weight: 600; color: #38bdf8; }
+    .company-detail { font-size: 0.78rem; color: var(--text-muted); font-weight: 400; }
 
     .timeline-desc {
       font-size: 0.875rem;
@@ -454,7 +482,7 @@
     .project-card:hover {
       transform: translateY(-3px);
       border-color: var(--border-h);
-      box-shadow: 0 8px 32px rgba(124,58,237,0.12);
+      box-shadow: 0 8px 32px rgba(34,211,238,0.10);
     }
 
     .project-card-top {
@@ -500,9 +528,9 @@
       font-weight: 500;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      background: rgba(124,58,237,0.1);
-      color: #a78bfa;
-      border: 1px solid rgba(124,58,237,0.2);
+      background: rgba(34,211,238,0.08);
+      color: #22d3ee;
+      border: 1px solid rgba(34,211,238,0.22);
     }
 
     /* ─── Writing ───────────────────────────────────────────────── */
@@ -754,21 +782,25 @@
             <span class="timeline-dates">Aug 2022 — Present</span>
           </div>
           <div class="timeline-company">
-            <img
-              src="https://logo.clearbit.com/fidelityinternational.com"
-              alt="Fidelity International"
-              class="company-logo"
-              onerror="this.style.display='none'"
-            />
-            Fidelity International &nbsp;·&nbsp; Research &amp; Portfolio Management &nbsp;·&nbsp; India / UK / China
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="Fidelity International"
+                src="https://logo.clearbit.com/fidelityinternational.com"
+                data-fallback-domain="fidelityinternational.com"
+                data-initials="FI"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Fidelity International</span>
+              <span class="company-detail">Research &amp; Portfolio Management &nbsp;·&nbsp; India / UK / China</span>
+            </div>
           </div>
           <ul class="timeline-desc">
-            <li>Contributed to architecture and design of the <strong style="color:var(--text)">Super Search AI</strong> platform — a RAG-powered semantic search engine for research analysts.</li>
-            <li>Designed and implemented the <strong style="color:var(--text)">Model Platform</strong> for the systematic investment team — lifecycle management of quant and portfolio models across dev/staging/production; microservices API for model serving, versioning, monitoring, and governance.</li>
-            <li>Diagnosed and resolved NLP pipeline bottlenecks across 20+ AWS Lambda/Batch jobs — redesigned SQL patterns to <strong style="color:var(--text)">reduce latency 45% and increase throughput 3×</strong> with no additional infrastructure spend.</li>
-            <li>Led <strong style="color:var(--text)">Python Chapter</strong> across India, UK, and China — defined standards for dependency management, security, branching, and CI/CD across 50+ engineers. Designed the PCI governance framework, adopted org-wide.</li>
-            <li>Automated CI/CD for 12+ batch jobs, <strong style="color:var(--text)">reducing deployment cycle time by 60%</strong>.</li>
-            <li>Founded internal <strong style="color:var(--text)">AI School</strong> — 8+ sessions on Transformers, LLMs, Context Engineering, and Agentic Systems to 50+ engineers; completed train-the-trainer programme.</li>
+            <li>Contributed to architecture and design of the <strong style="color:#f0f6ff">Super Search AI</strong> platform — a RAG-powered semantic search engine for research analysts.</li>
+            <li>Designed and implemented the <strong style="color:#f0f6ff">Model Platform</strong> for the systematic investment team — lifecycle management of quant and portfolio models across dev/staging/production; microservices API for model serving, versioning, monitoring, and governance.</li>
+            <li>Diagnosed and resolved NLP pipeline bottlenecks across 20+ AWS Lambda/Batch jobs — redesigned SQL patterns to <strong style="color:#f0f6ff">reduce latency 45% and increase throughput 3×</strong> with no additional infrastructure spend.</li>
+            <li>Led <strong style="color:#f0f6ff">Python Chapter</strong> across India, UK, and China — defined standards for dependency management, security, branching, and CI/CD across 50+ engineers. Designed the PCI governance framework, adopted org-wide.</li>
+            <li>Automated CI/CD for 12+ batch jobs, <strong style="color:#f0f6ff">reducing deployment cycle time by 60%</strong>.</li>
+            <li>Founded internal <strong style="color:#f0f6ff">AI School</strong> — 8+ sessions on Transformers, LLMs, Context Engineering, and Agentic Systems to 50+ engineers; completed train-the-trainer programme.</li>
           </ul>
         </div>
 
@@ -779,19 +811,23 @@
             <span class="timeline-dates">Jun 2018 — Aug 2022</span>
           </div>
           <div class="timeline-company">
-            <img
-              src="https://logo.clearbit.com/tcs.com"
-              alt="TCS"
-              class="company-logo"
-              onerror="this.style.display='none'"
-            />
-            Tata Consultancy Services &nbsp;·&nbsp; Healthcare &amp; Life Sciences &nbsp;·&nbsp; India / USA
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="TCS"
+                src="assets/tcs_logo.png"
+                data-fallback-domain="tcs.com"
+                data-initials="TCS"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Tata Consultancy Services</span>
+              <span class="company-detail">Healthcare &amp; Life Sciences &nbsp;·&nbsp; India / USA</span>
+            </div>
           </div>
           <ul class="timeline-desc">
             <li>Delivered two AI-powered cloud analytics products from zero to production.</li>
-            <li>Built the <strong style="color:var(--text)">Competitive Intelligence Platform</strong>: custom web crawlers, NLP pipelines (topic modelling, summarisation, sentiment analysis, entity extraction), and intelligent alerting across clinical trials, news, conferences, and journals.</li>
-            <li>Developed the <strong style="color:var(--text)">MLR (Medical Legal Review)</strong> platform with a custom OCR engine, PDF extraction engine, and configurable compliance rule engine — delivered to production-grade accuracy without off-the-shelf tooling.</li>
-            <li>Introduced Apache Airflow as pipeline orchestration standard across 10+ ML projects; established MLOps foundation using MLflow — <strong style="color:var(--text)">cutting model iteration cycles from ~3 weeks to ~5 days</strong>.</li>
+            <li>Built the <strong style="color:#f0f6ff">Competitive Intelligence Platform</strong>: custom web crawlers, NLP pipelines (topic modelling, summarisation, sentiment analysis, entity extraction), and intelligent alerting across clinical trials, news, conferences, and journals.</li>
+            <li>Developed the <strong style="color:#f0f6ff">MLR (Medical Legal Review)</strong> platform with a custom OCR engine, PDF extraction engine, and configurable compliance rule engine — delivered to production-grade accuracy without off-the-shelf tooling.</li>
+            <li>Introduced Apache Airflow as pipeline orchestration standard across 10+ ML projects; established MLOps foundation using MLflow — <strong style="color:#f0f6ff">cutting model iteration cycles from ~3 weeks to ~5 days</strong>.</li>
             <li>Established HIPAA-aligned compliance standards enabling all products to pass client security audits without remediation.</li>
           </ul>
         </div>
@@ -803,13 +839,17 @@
             <span class="timeline-dates">Oct 2013 — May 2018</span>
           </div>
           <div class="timeline-company">
-            <img
-              src="https://logo.clearbit.com/aon.com"
-              alt="Aon"
-              class="company-logo"
-              onerror="this.style.display='none'"
-            />
-            Aon Plc &nbsp;·&nbsp; Risk &amp; Insurance &nbsp;·&nbsp; India / USA
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="Aon"
+                src="https://logo.clearbit.com/aon.com"
+                data-fallback-domain="aon.com"
+                data-initials="Aon"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Aon Plc</span>
+              <span class="company-detail">Risk &amp; Insurance &nbsp;·&nbsp; India / USA</span>
+            </div>
           </div>
           <ul class="timeline-desc">
             <li>Built India delivery team from 0 to 8 engineers for the AICPA Process 360 modernisation programme; replicated playbook for NFS account, scaling to 12 engineers — both programmes delivered on schedule.</li>
@@ -825,13 +865,17 @@
             <span class="timeline-dates">Aug 2011 — Aug 2013</span>
           </div>
           <div class="timeline-company">
-            <img
-              src="https://logo.clearbit.com/tcs.com"
-              alt="TCS"
-              class="company-logo"
-              onerror="this.style.display='none'"
-            />
-            Tata Consultancy Services &nbsp;·&nbsp; Healthcare Domain &nbsp;·&nbsp; India / USA
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="TCS"
+                src="assets/tcs_logo.png"
+                data-fallback-domain="tcs.com"
+                data-initials="TCS"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Tata Consultancy Services</span>
+              <span class="company-detail">Healthcare Domain &nbsp;·&nbsp; India / USA</span>
+            </div>
           </div>
           <ul class="timeline-desc">
             <li>Promoted to Tech Lead on a live multi-year healthcare programme — owned design, work breakdown, code reviews, and stakeholder coordination while continuing hands-on development.</li>
@@ -839,24 +883,52 @@
           </ul>
         </div>
 
-        <!-- Early Career -->
+        <!-- Wipro Technologies -->
         <div class="timeline-item">
           <div class="timeline-header">
             <span class="timeline-role">Software Engineer</span>
-            <span class="timeline-dates">Jul 2009 — Aug 2011</span>
+            <span class="timeline-dates">2010 — Aug 2011</span>
           </div>
           <div class="timeline-company">
-            <img
-              src="https://logo.clearbit.com/wipro.com"
-              alt="Wipro"
-              class="company-logo"
-              onerror="this.style.display='none'"
-            />
-            Wipro Technologies &amp; Smart Controls &nbsp;·&nbsp; Retail / Manufacturing / Supply Chain
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="Wipro"
+                src="https://logo.clearbit.com/wipro.com"
+                data-fallback-domain="wipro.com"
+                data-initials="W"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Wipro Technologies</span>
+              <span class="company-detail">Retail &amp; Logistics &nbsp;·&nbsp; India</span>
+            </div>
           </div>
           <ul class="timeline-desc">
-            <li>Software development at Wipro across Royal Caribbean, DHL, and Direct Billing accounts.</li>
-            <li>Built baggage tracking system for Delhi Airport Metro Express at Smart Controls — integrating real-time sensor data (PLC/SCADA) into SQL Server with live reporting.</li>
+            <li>Software development across Royal Caribbean, DHL, and Direct Billing accounts.</li>
+          </ul>
+        </div>
+
+        <!-- Smart Controls -->
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Software Engineer</span>
+            <span class="timeline-dates">Jul 2009 — 2010</span>
+          </div>
+          <div class="timeline-company">
+            <div class="company-logo-wrap">
+              <img class="company-logo" alt="Smart Controls"
+                src="assets/logo_smartcontrols.png"
+                data-fallback-domain="smartcontrols.in"
+                data-initials="SC"
+              />
+            </div>
+            <div class="company-info">
+              <span class="company-name">Smart Controls</span>
+              <span class="company-detail">Industrial Automation &nbsp;·&nbsp; India</span>
+            </div>
+          </div>
+          <ul class="timeline-desc">
+            <li>Built industrial automation software using .NET, PLC, and SCADA systems.</li>
+            <li>Developed baggage tracking system for Delhi Airport Metro Express — integrating real-time sensor data into SQL Server with live reporting dashboards.</li>
           </ul>
         </div>
 
@@ -1046,6 +1118,29 @@
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ─── Company logo fallback chain: primary src → Google Favicons → initials
+    document.querySelectorAll('.company-logo').forEach(img => {
+      const isGFavicon = src => src.includes('google.com/s2/favicons');
+      img.addEventListener('error', function onErr() {
+        const domain = img.dataset.fallbackDomain;
+        const initials = img.dataset.initials || '?';
+        if (!isGFavicon(img.src)) {
+          // First failure: try Google Favicons
+          img.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+        } else {
+          // Second failure: replace wrap with initials badge
+          img.removeEventListener('error', onErr);
+          const wrap = img.closest('.company-logo-wrap');
+          if (wrap) {
+            const badge = document.createElement('div');
+            badge.className = 'company-logo-fallback';
+            badge.textContent = initials;
+            wrap.replaceWith(badge);
+          }
+        }
+      });
+    });
 
     // ─── Email obfuscation
     const mailHandler = e => {
