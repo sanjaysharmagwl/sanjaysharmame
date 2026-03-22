@@ -30,6 +30,21 @@ Write as Sanjay in the **first person**. Direct. No hedging. No corporate fluff.
 
 ---
 
+## Bio vs Resume — the core distinction
+
+This site should read as a **bio and capabilities showcase**, not a resume. The difference:
+
+- **Resume**: "At Company X I built Y and achieved metric Z." — employer-centric, backward-looking, reads like a job application.
+- **Bio/capabilities**: "Here's what I build, here's what I'm good at, here's what I care about." — person-centric, tells a story.
+
+In practice this means:
+- **About**: No company names. Talk about capabilities and character, not job history.
+- **Work**: Narrative sentences per role, not bullet-point achievement lists. What was this era *about*? No bold metric callouts.
+- **Projects**: Capability-descriptive titles (what type of system is this), not proprietary project codenames. No company attribution in descriptions.
+- **Everywhere**: The reader should come away knowing *who you are and what you can do*, not just where you worked.
+
+---
+
 ## Tone by Section
 
 ### Hero / Bio
