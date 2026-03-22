@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjay Sharma — AI/ML Engineer</title>
-  <meta name="description" content="Sanjay Sharma — AI/ML Engineer building intelligent systems." />
+  <title>Sanjay Sharma — Principal Engineer · AI/ML</title>
+  <meta name="description" content="Sanjay Sharma — Principal Engineer building and scaling enterprise AI platforms and intelligent applications." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
       --gradient:   linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
       --radius:     12px;
       --nav-h:      64px;
-      --max-w:      860px;
+      --max-w:      880px;
     }
 
     html { scroll-behavior: smooth; }
@@ -145,7 +145,6 @@
       overflow: hidden;
     }
 
-    /* Subtle background glow */
     #hero::before {
       content: '';
       position: absolute;
@@ -168,7 +167,35 @@
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 1; }
+    /* Two-column hero layout */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      width: 100%;
+    }
+
+    .hero-content { flex: 1; min-width: 0; }
+
+    .hero-avatar-wrap {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid rgba(124,58,237,0.35);
+      box-shadow: 0 0 0 6px rgba(124,58,237,0.08), 0 24px 64px rgba(0,0,0,0.5);
+    }
 
     .hero-tag {
       display: inline-flex;
@@ -197,7 +224,7 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.8rem, 7vw, 5rem);
       font-weight: 700;
       line-height: 1.05;
       letter-spacing: -0.03em;
@@ -209,7 +236,7 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
       font-weight: 400;
       color: var(--text-muted);
       margin-bottom: 1.25rem;
@@ -217,9 +244,9 @@
     }
 
     .hero-bio {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 520px;
+      max-width: 480px;
       line-height: 1.75;
       margin-bottom: 2.5rem;
     }
@@ -263,8 +290,39 @@
     }
 
     .about-text p:last-child { margin-bottom: 0; }
-
     .about-text strong { color: var(--text); font-weight: 500; }
+
+    /* ─── Skills ────────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .skill-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .skill-group:hover { border-color: rgba(124,58,237,0.3); }
+
+    .skill-group-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a78bfa;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-group-items {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
     /* ─── Work / Timeline ───────────────────────────────────────── */
     .timeline {
@@ -336,6 +394,20 @@
       color: #a78bfa;
       font-weight: 500;
       margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .company-logo {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #fff;
+      object-fit: contain;
+      padding: 1px;
+      vertical-align: middle;
     }
 
     .timeline-desc {
@@ -512,13 +584,16 @@
     footer a:hover { color: var(--text); }
 
     /* ─── Responsive ────────────────────────────────────────────── */
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
       nav { padding: 0 1rem; }
       .nav-links { gap: 1.25rem; }
       .nav-links li:nth-child(4) { display: none; }
       section { padding: 4rem 0; }
       .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .hero-inner { flex-direction: column-reverse; align-items: flex-start; gap: 1.5rem; }
+      .hero-avatar { width: 110px; height: 110px; }
     }
   </style>
 </head>
@@ -538,41 +613,50 @@
   <!-- ─── Hero ─────────────────────────────────────────────────── -->
   <section id="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag">
-          <span class="dot"></span>
-          AI / ML Engineer
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="dot"></span>
+            Principal Engineer &nbsp;·&nbsp; AI/ML
+          </div>
+
+          <h1>Sanjay<br />Sharma</h1>
+
+          <p class="hero-subtitle">
+            Engineering Leader · AI Platforms · Gurugram, India
+          </p>
+
+          <p class="hero-bio">
+            16+ years building and scaling enterprise AI platforms — from RAG-powered search and MLOps
+            infrastructure to NLP pipelines and LLM systems that run in production at global scale.
+          </p>
+
+          <div class="social-links">
+            <a href="https://github.com/sanjaysharmagwl" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/sanjayse/" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://x.com/sanjays42387142" class="social-link" target="_blank" rel="noopener">
+              <i class="fab fa-x-twitter"></i> X
+            </a>
+            <a href="#" class="social-link" id="email-link">
+              <i class="far fa-envelope"></i> Email
+            </a>
+          </div>
         </div>
 
-        <h1>Sanjay<br />Sharma</h1>
-
-        <p class="hero-subtitle">
-          <!-- TODO: update subtitle -->
-          Building intelligent systems &amp; shipping ML at scale.
-        </p>
-
-        <p class="hero-bio">
-          <!-- TODO: update one-liner bio -->
-          I design and build machine learning systems — from research to production.
-          Passionate about large-scale models, developer tooling, and the craft of
-          turning ideas into reliable software.
-        </p>
-
-        <div class="social-links">
-          <!-- TODO: replace href="#" with your actual profile URLs -->
-          <a href="#" class="social-link" id="github-link" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="#" class="social-link" id="linkedin-link" target="_blank" rel="noopener">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="#" class="social-link" id="twitter-link" target="_blank" rel="noopener">
-            <i class="fab fa-x-twitter"></i> Twitter / X
-          </a>
-          <a href="#" class="social-link" id="email-link">
-            <i class="far fa-envelope"></i> Email
-          </a>
+        <div class="hero-avatar-wrap">
+          <img
+            src="assets/avatar.jpg"
+            alt="Sanjay Sharma"
+            class="hero-avatar"
+            onerror="this.style.display='none'"
+          />
         </div>
+
       </div>
     </div>
   </section>
@@ -582,23 +666,77 @@
     <div class="container fade-in">
       <div class="section-label">About</div>
       <div class="about-text">
-        <!-- TODO: replace with your real bio -->
         <p>
-          I'm an <strong>AI/ML Engineer</strong> with a deep interest in making
-          machine learning systems work reliably in the real world. My work spans
-          model training, infrastructure, and the tooling that lets teams move fast
-          without breaking things.
+          I'm a <strong>Principal Engineer and Engineering Leader</strong> with 16+ years of experience building
+          and scaling enterprise AI platforms and intelligent applications. I specialise in translating AI research
+          into production-grade systems and architecting scalable solutions for complex business domains.
         </p>
         <p>
-          Previously I've worked on <strong>large language models</strong>,
-          <strong>recommendation systems</strong>, and <strong>ML platform
-          engineering</strong> — always with an eye toward scalability, observability,
-          and clean abstractions. I care about code quality as much as model quality.
+          My work spans the full AI lifecycle — <strong>NLP pipelines, MLOps platforms, RAG-powered search,
+          quantitative model platforms</strong>, and LLM-based systems. I've led Python engineering standards and
+          architecture practices for 50+ engineers across global teams in India, UK, and China, establishing
+          CI/CD frameworks, dependency governance, and scalable engineering patterns.
         </p>
         <p>
-          When I'm not at a computer, I'm probably reading, hiking, or arguing about
-          the right way to structure a data pipeline.
+          I care deeply about <strong>engineering culture and capability building</strong>. At Fidelity
+          International I founded an internal AI School — delivering 8+ sessions on Transformers, LLMs, Context
+          Engineering, and Agentic Systems to 50+ engineers with no formal mandate.
         </p>
+        <p>
+          I'm seeking leadership opportunities to drive <strong>enterprise AI strategy</strong>, build
+          high-performing engineering teams, and deliver measurable business impact through next-generation
+          technologies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Skills ────────────────────────────────────────────────── -->
+  <section id="skills" style="padding-top: 0;">
+    <div class="container fade-in">
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <div class="skill-group-title">AI &amp; Generative AI</div>
+          <div class="skill-group-items">LLMs, RAG, Vector Search, Agentic Systems, Prompt Engineering, Context Engineering, LLM Ops, Fine-tuning, Embeddings</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Classical ML &amp; Deep Learning</div>
+          <div class="skill-group-items">Supervised / Unsupervised Learning, Neural Networks, CNNs, RNNs, Transfer Learning, Scikit-learn, PyTorch</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">NLP &amp; Data Science</div>
+          <div class="skill-group-items">NLP Pipelines, Topic Modelling, Sentiment Analysis, Entity Extraction, Named Entity Recognition, OCR, Text Summarisation</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">ML Operations</div>
+          <div class="skill-group-items">MLflow, Apache Airflow, Model Lifecycle Management, Experiment Tracking, Pipeline Orchestration, Batch Processing</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Cloud &amp; Infrastructure</div>
+          <div class="skill-group-items">AWS (Lambda, ECS, Batch, S3, RDS, SageMaker), Docker, Kubernetes, Terraform, Infrastructure as Code</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Languages &amp; Frameworks</div>
+          <div class="skill-group-items">Python, Java, JavaScript / TypeScript, FastAPI, Flask, React, Node.js, SQL, LangChain, LangGraph</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Architecture &amp; Design</div>
+          <div class="skill-group-items">Platform Engineering, Microservices, Distributed Systems, REST APIs, Event-Driven Design, C4 Architecture</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Databases</div>
+          <div class="skill-group-items">PostgreSQL, Elasticsearch, MongoDB, Oracle, DynamoDB, Redis</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -609,41 +747,116 @@
       <div class="section-label">Work</div>
       <div class="timeline">
 
-        <!-- TODO: replace all entries with your real work history -->
+        <!-- Fidelity International -->
         <div class="timeline-item">
           <div class="timeline-header">
-            <span class="timeline-role">Senior ML Engineer</span>
-            <span class="timeline-dates">2023 — now</span>
+            <span class="timeline-role">Principal Engineer / Engineering Lead</span>
+            <span class="timeline-dates">Aug 2022 — Present</span>
           </div>
-          <div class="timeline-company">Company A &nbsp;·&nbsp; Full-time</div>
+          <div class="timeline-company">
+            <img
+              src="https://logo.clearbit.com/fidelityinternational.com"
+              alt="Fidelity International"
+              class="company-logo"
+              onerror="this.style.display='none'"
+            />
+            Fidelity International &nbsp;·&nbsp; Research &amp; Portfolio Management &nbsp;·&nbsp; India / UK / China
+          </div>
           <ul class="timeline-desc">
-            <li>Lead training and evaluation of large-scale language models.</li>
-            <li>Built ML platform features reducing experiment cycle time by 40%.</li>
-            <li>Collaborated cross-functionally with research and product teams.</li>
+            <li>Contributed to architecture and design of the <strong style="color:var(--text)">Super Search AI</strong> platform — a RAG-powered semantic search engine for research analysts.</li>
+            <li>Designed and implemented the <strong style="color:var(--text)">Model Platform</strong> for the systematic investment team — lifecycle management of quant and portfolio models across dev/staging/production; microservices API for model serving, versioning, monitoring, and governance.</li>
+            <li>Diagnosed and resolved NLP pipeline bottlenecks across 20+ AWS Lambda/Batch jobs — redesigned SQL patterns to <strong style="color:var(--text)">reduce latency 45% and increase throughput 3×</strong> with no additional infrastructure spend.</li>
+            <li>Led <strong style="color:var(--text)">Python Chapter</strong> across India, UK, and China — defined standards for dependency management, security, branching, and CI/CD across 50+ engineers. Designed the PCI governance framework, adopted org-wide.</li>
+            <li>Automated CI/CD for 12+ batch jobs, <strong style="color:var(--text)">reducing deployment cycle time by 60%</strong>.</li>
+            <li>Founded internal <strong style="color:var(--text)">AI School</strong> — 8+ sessions on Transformers, LLMs, Context Engineering, and Agentic Systems to 50+ engineers; completed train-the-trainer programme.</li>
           </ul>
         </div>
 
+        <!-- TCS Healthcare -->
         <div class="timeline-item">
           <div class="timeline-header">
-            <span class="timeline-role">ML Engineer</span>
-            <span class="timeline-dates">2021 — 2023</span>
+            <span class="timeline-role">Backend Application Lead</span>
+            <span class="timeline-dates">Jun 2018 — Aug 2022</span>
           </div>
-          <div class="timeline-company">Company B &nbsp;·&nbsp; Full-time</div>
+          <div class="timeline-company">
+            <img
+              src="https://logo.clearbit.com/tcs.com"
+              alt="TCS"
+              class="company-logo"
+              onerror="this.style.display='none'"
+            />
+            Tata Consultancy Services &nbsp;·&nbsp; Healthcare &amp; Life Sciences &nbsp;·&nbsp; India / USA
+          </div>
           <ul class="timeline-desc">
-            <li>Designed and deployed real-time recommendation systems.</li>
-            <li>Maintained training pipelines serving billions of predictions/day.</li>
+            <li>Delivered two AI-powered cloud analytics products from zero to production.</li>
+            <li>Built the <strong style="color:var(--text)">Competitive Intelligence Platform</strong>: custom web crawlers, NLP pipelines (topic modelling, summarisation, sentiment analysis, entity extraction), and intelligent alerting across clinical trials, news, conferences, and journals.</li>
+            <li>Developed the <strong style="color:var(--text)">MLR (Medical Legal Review)</strong> platform with a custom OCR engine, PDF extraction engine, and configurable compliance rule engine — delivered to production-grade accuracy without off-the-shelf tooling.</li>
+            <li>Introduced Apache Airflow as pipeline orchestration standard across 10+ ML projects; established MLOps foundation using MLflow — <strong style="color:var(--text)">cutting model iteration cycles from ~3 weeks to ~5 days</strong>.</li>
+            <li>Established HIPAA-aligned compliance standards enabling all products to pass client security audits without remediation.</li>
           </ul>
         </div>
 
+        <!-- Aon -->
         <div class="timeline-item">
           <div class="timeline-header">
-            <span class="timeline-role">Machine Learning Intern</span>
-            <span class="timeline-dates">2020 — 2021</span>
+            <span class="timeline-role">Developer Analyst → Technical Lead</span>
+            <span class="timeline-dates">Oct 2013 — May 2018</span>
           </div>
-          <div class="timeline-company">Company C &nbsp;·&nbsp; Internship</div>
+          <div class="timeline-company">
+            <img
+              src="https://logo.clearbit.com/aon.com"
+              alt="Aon"
+              class="company-logo"
+              onerror="this.style.display='none'"
+            />
+            Aon Plc &nbsp;·&nbsp; Risk &amp; Insurance &nbsp;·&nbsp; India / USA
+          </div>
           <ul class="timeline-desc">
-            <li>Prototyped NLP models for document classification.</li>
-            <li>Shipped a feature used by 10k+ users within first month.</li>
+            <li>Built India delivery team from 0 to 8 engineers for the AICPA Process 360 modernisation programme; replicated playbook for NFS account, scaling to 12 engineers — both programmes delivered on schedule.</li>
+            <li>Served as SPOC across enterprise architects, solution architects, vendors, and 20+ business stakeholders for migrations to .NET and Microsoft Dynamics (finance domain).</li>
+            <li>Designed integration architecture using service-based patterns and Microsoft Dynamics services, bridging legacy systems with modern .NET platforms.</li>
+          </ul>
+        </div>
+
+        <!-- TCS Healthcare early -->
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">System Engineer → Tech Lead</span>
+            <span class="timeline-dates">Aug 2011 — Aug 2013</span>
+          </div>
+          <div class="timeline-company">
+            <img
+              src="https://logo.clearbit.com/tcs.com"
+              alt="TCS"
+              class="company-logo"
+              onerror="this.style.display='none'"
+            />
+            Tata Consultancy Services &nbsp;·&nbsp; Healthcare Domain &nbsp;·&nbsp; India / USA
+          </div>
+          <ul class="timeline-desc">
+            <li>Promoted to Tech Lead on a live multi-year healthcare programme — owned design, work breakdown, code reviews, and stakeholder coordination while continuing hands-on development.</li>
+            <li>Led L2/L3 production support with root cause analysis and post-incident reviews; mentored 5+ junior developers and established team code review standards.</li>
+          </ul>
+        </div>
+
+        <!-- Early Career -->
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Software Engineer</span>
+            <span class="timeline-dates">Jul 2009 — Aug 2011</span>
+          </div>
+          <div class="timeline-company">
+            <img
+              src="https://logo.clearbit.com/wipro.com"
+              alt="Wipro"
+              class="company-logo"
+              onerror="this.style.display='none'"
+            />
+            Wipro Technologies &amp; Smart Controls &nbsp;·&nbsp; Retail / Manufacturing / Supply Chain
+          </div>
+          <ul class="timeline-desc">
+            <li>Software development at Wipro across Royal Caribbean, DHL, and Direct Billing accounts.</li>
+            <li>Built baggage tracking system for Delhi Airport Metro Express at Smart Controls — integrating real-time sensor data (PLC/SCADA) into SQL Server with live reporting.</li>
           </ul>
         </div>
 
@@ -657,108 +870,104 @@
       <div class="section-label">Projects</div>
       <div class="projects-grid">
 
-        <!-- TODO: replace all cards with your real projects -->
-        <a href="#" class="project-card" target="_blank" rel="noopener">
-          <div class="project-card-top">
-            <span class="project-icon">🧠</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
-          </div>
-          <div class="project-title">LLM Fine-tuning Toolkit</div>
-          <div class="project-desc">
-            A lightweight library for fine-tuning open-source LLMs with minimal
-            boilerplate. Supports LoRA, QLoRA, and full fine-tuning on consumer GPUs.
-          </div>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">Transformers</span>
-          </div>
-        </a>
-
-        <a href="#" class="project-card" target="_blank" rel="noopener">
-          <div class="project-card-top">
-            <span class="project-icon">⚡</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
-          </div>
-          <div class="project-title">Vector Search Engine</div>
-          <div class="project-desc">
-            High-performance approximate nearest-neighbor search built on top of
-            FAISS. REST API + Python client with sub-10ms p99 latency.
-          </div>
-          <div class="project-tags">
-            <span class="tag">FAISS</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Docker</span>
-          </div>
-        </a>
-
-        <a href="#" class="project-card" target="_blank" rel="noopener">
-          <div class="project-card-top">
-            <span class="project-icon">📊</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
-          </div>
-          <div class="project-title">ML Experiment Tracker</div>
-          <div class="project-desc">
-            Minimal experiment tracking for teams who don't want another SaaS tool.
-            Git-native, stores runs as plain JSON. CLI + web UI.
-          </div>
-          <div class="project-tags">
-            <span class="tag">Go</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">React</span>
-          </div>
-        </a>
-
-        <a href="#" class="project-card" target="_blank" rel="noopener">
+        <div class="project-card">
           <div class="project-card-top">
             <span class="project-icon">🔍</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
           </div>
-          <div class="project-title">RAG Pipeline Framework</div>
+          <div class="project-title">Super Search AI</div>
           <div class="project-desc">
-            Composable retrieval-augmented generation pipelines. Plug in any
-            embedding model, vector store, or LLM backend.
+            RAG-powered semantic search engine for research analysts at Fidelity International.
+            Combines vector search, LLM reranking, and structured data retrieval across research corpora.
+          </div>
+          <div class="project-tags">
+            <span class="tag">RAG</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-icon">📈</span>
+          </div>
+          <div class="project-title">Quant Model Platform</div>
+          <div class="project-desc">
+            Structured lifecycle management platform for quant and portfolio models across
+            dev/staging/production with microservices API for serving, versioning, monitoring, and governance.
+          </div>
+          <div class="project-tags">
+            <span class="tag">MLOps</span>
+            <span class="tag">Microservices</span>
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-icon">🕵️</span>
+          </div>
+          <div class="project-title">Competitive Intelligence Platform</div>
+          <div class="project-desc">
+            Custom web crawlers + NLP pipelines (topic modelling, summarisation, sentiment analysis,
+            entity extraction) with intelligent alerting across clinical trials, news, and journals.
+          </div>
+          <div class="project-tags">
+            <span class="tag">NLP</span>
+            <span class="tag">Web Crawling</span>
+            <span class="tag">Apache Airflow</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-icon">⚖️</span>
+          </div>
+          <div class="project-title">MLR Compliance Engine</div>
+          <div class="project-desc">
+            Medical Legal Review platform with custom-built OCR engine, PDF extraction, and
+            configurable compliance rules covering grammar, regulatory matching, and disclaimer verification.
+          </div>
+          <div class="project-tags">
+            <span class="tag">OCR</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Compliance</span>
+            <span class="tag">HIPAA</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-icon">🏛️</span>
+          </div>
+          <div class="project-title">PCI Governance Framework</div>
+          <div class="project-desc">
+            Python Chapter Improvement framework defining engineering standards for dependency
+            management, security, branching, and CI/CD adopted org-wide across 50+ engineers.
           </div>
           <div class="project-tags">
             <span class="tag">Python</span>
-            <span class="tag">LangChain</span>
-            <span class="tag">Pinecone</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Governance</span>
           </div>
-        </a>
+        </div>
 
-        <a href="#" class="project-card" target="_blank" rel="noopener">
+        <div class="project-card">
           <div class="project-card-top">
-            <span class="project-icon">🤖</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
+            <span class="project-icon">🎓</span>
           </div>
-          <div class="project-title">Inference Optimizer</div>
+          <div class="project-title">AI School</div>
           <div class="project-desc">
-            Tooling for reducing LLM inference cost: quantization, speculative
-            decoding, and KV-cache management. 3× throughput on A100s.
+            Internal AI education initiative at Fidelity International — 8+ sessions on Transformers,
+            LLMs, Context Engineering, and Agentic Systems delivered to 50+ engineers org-wide.
           </div>
           <div class="project-tags">
-            <span class="tag">CUDA</span>
-            <span class="tag">TensorRT</span>
-            <span class="tag">vLLM</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">Agentic AI</span>
           </div>
-        </a>
-
-        <a href="#" class="project-card" target="_blank" rel="noopener">
-          <div class="project-card-top">
-            <span class="project-icon">📡</span>
-            <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
-          </div>
-          <div class="project-title">Data Pipeline Audit Tool</div>
-          <div class="project-desc">
-            Detects distribution drift, schema violations, and silent failures in
-            ML training data pipelines before they hit production.
-          </div>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Spark</span>
-            <span class="tag">Great Expectations</span>
-          </div>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -767,38 +976,37 @@
   <!-- ─── Writing ──────────────────────────────────────────────── -->
   <section id="writing">
     <div class="container fade-in">
-      <div class="section-label">Writing</div>
+      <div class="section-label">Writing &amp; Talks</div>
       <div class="writing-list">
 
-        <!-- TODO: replace with your real posts/links -->
-        <a href="#" class="writing-item" target="_blank" rel="noopener">
+        <a href="#" class="writing-item">
           <div>
-            <div class="writing-title">How I think about LLM evaluation in production</div>
-            <div class="writing-meta">Blog &nbsp;·&nbsp; 2025</div>
+            <div class="writing-title">Context Engineering for Agentic Systems</div>
+            <div class="writing-meta">AI School Session &nbsp;·&nbsp; Fidelity International &nbsp;·&nbsp; 2024</div>
           </div>
           <i class="fas fa-arrow-right writing-arrow"></i>
         </a>
 
-        <a href="#" class="writing-item" target="_blank" rel="noopener">
+        <a href="#" class="writing-item">
           <div>
-            <div class="writing-title">The hidden costs of vector databases</div>
-            <div class="writing-meta">Blog &nbsp;·&nbsp; 2024</div>
+            <div class="writing-title">LLMs in Production: What the Papers Don't Tell You</div>
+            <div class="writing-meta">AI School Session &nbsp;·&nbsp; Fidelity International &nbsp;·&nbsp; 2024</div>
           </div>
           <i class="fas fa-arrow-right writing-arrow"></i>
         </a>
 
-        <a href="#" class="writing-item" target="_blank" rel="noopener">
+        <a href="#" class="writing-item">
           <div>
-            <div class="writing-title">Fine-tuning is not always the answer</div>
-            <div class="writing-meta">Medium &nbsp;·&nbsp; 2024</div>
+            <div class="writing-title">Building RAG Systems That Actually Work</div>
+            <div class="writing-meta">Internal Tech Talk &nbsp;·&nbsp; 2023</div>
           </div>
           <i class="fas fa-arrow-right writing-arrow"></i>
         </a>
 
-        <a href="#" class="writing-item" target="_blank" rel="noopener">
+        <a href="#" class="writing-item">
           <div>
-            <div class="writing-title">Building an ML platform from scratch: lessons learned</div>
-            <div class="writing-meta">Blog &nbsp;·&nbsp; 2023</div>
+            <div class="writing-title">From Notebooks to Production: MLOps for Real Teams</div>
+            <div class="writing-meta">AI School Session &nbsp;·&nbsp; 2023</div>
           </div>
           <i class="fas fa-arrow-right writing-arrow"></i>
         </a>
@@ -810,46 +1018,42 @@
   <!-- ─── Footer ───────────────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
-      <p>© 2026 Sanjay Sharma</p>
+      <p>© 2026 Sanjay Sharma &nbsp;·&nbsp; Gurugram, India</p>
       <p>
-        <!-- TODO: add real links -->
-        <a href="#" target="_blank">GitHub</a> &nbsp;·&nbsp;
-        <a href="#" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
-        <a href="#" target="_blank">Twitter</a>
+        <a href="https://github.com/sanjaysharmagwl" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/sanjayse/" target="_blank" rel="noopener">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://x.com/sanjays42387142" target="_blank" rel="noopener">X</a>
+        &nbsp;·&nbsp;
+        <a href="#" id="footer-email">Email</a>
       </p>
     </div>
   </footer>
 
   <script>
-    // ─── Nav scroll effect ──────────────────────────────────────
+    // ─── Nav scroll effect
     const navbar = document.getElementById('navbar');
-    const onScroll = () => {
+    window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }, { passive: true });
 
-    // ─── Fade-in on scroll ──────────────────────────────────────
-    const fadeEls = document.querySelectorAll('.fade-in');
+    // ─── Fade-in on scroll
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
       }),
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
-    fadeEls.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ─── Email obfuscation ──────────────────────────────────────
-    // TODO: replace with your real email parts (split to avoid scraping)
-    document.getElementById('email-link').addEventListener('click', (e) => {
+    // ─── Email obfuscation
+    const mailHandler = e => {
       e.preventDefault();
-      // Example: user = 'hello', domain = 'sanjaysharma.me'
-      const user   = 'hello'; // TODO: change to your email username
-      const domain = 'sanjaysharma.me';
-      window.location.href = `mailto:${user}@${domain}`;
-    });
+      window.location.href = 'mailto:' + 'sanjaysharmagwl' + '@' + 'gmail.com';
+    };
+    document.getElementById('email-link').addEventListener('click', mailHandler);
+    document.getElementById('footer-email').addEventListener('click', mailHandler);
   </script>
 
 </body>
